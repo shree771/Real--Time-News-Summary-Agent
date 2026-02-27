@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Real-Time News Summary</title>
+    <style>
+        body {
+            font-family: Arial;
+            background: #f4f4f4;
+            padding: 20px;
+        }
+        .news {
+            background: white;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+        }
+        a {
+            text-decoration: none;
+            color: #1a73e8;
+        }
+    </style>
+</head>
+<body>
+
+<h1>📰 Real-Time News Summary</h1>
+
+{% if news %}
+    {% for item in news %}
+        <div class="news">
+            <h2>{{ item.title }}</h2>
+            <p>{{ item.description }}</p>
+            <a href="{{ item.url }}" target="_blank">Read full article</a>
+        </div>
+    {% endfor %}
+{% else %}
+    <p>No news available 😕</p>
+{% endif %}
+
+</body>
+</html>
